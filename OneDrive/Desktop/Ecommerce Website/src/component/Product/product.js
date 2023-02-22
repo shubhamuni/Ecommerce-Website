@@ -5,11 +5,10 @@ const Product = (props) => {
   return (
     <div>
       <AvailableProducts />
-      <Navbar bg="light" variant="light" fixed="bottom">
+      <Navbar bg="primary" variant="light" fixed="bottom">
         <Container>
           <Navbar.Brand>The Generics</Navbar.Brand>
         </Container>
-        <Container></Container>
       </Navbar>
     </div>
   );

@@ -1,0 +1,30 @@
+body {
+  background-image: url("beauty.jpg");
+  background-size: cover;
+  text-align: left;
+}
+.container {
+  background: white;
+  padding: 25px;
+  width: 500px;
+  margin: 50px auto 0;
+  border: 3px solid orange;
+  box-shadow: 0 0 7px 5px rgba(0, 0, 0, 1);
+}
+.heading {
+  padding: 5px;
+  color: white;
+}
+.btn {
+  width: 1290px;
+  color: orange;
+  float: initial;
+}
+.input-name {
+  width: 90%;
+  position: relative;
+  margin: 20px auto;
+}
+#first {
+  text-align: center;
+}

@@ -1,8 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { Container, Nav, Navbar, Button, NavItem } from "react-bootstrap";
 import classes from "./Header.module.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
@@ -29,12 +29,9 @@ const Header = () => {
               </NavItem>
             </Nav>
             <Button
+              onClick={props.onShow}
               className="align-content-end"
-              style={{
-                width: "10rem",
-                height: "30px",
-                paddingBottom: "2rem",
-              }}
+              style={{ width: "10rem", height: "30px", paddingBottom: "2rem" }}
               variant="secondary"
             >
               Cart 0

@@ -1,4 +1,4 @@
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Row, Col } from "react-bootstrap";
 import classes from "./AvailableProduct.module.css";
 
 const productsArr = [
@@ -29,15 +29,7 @@ const AvailableProducts = () => {
     <div className="d-flex justify-content-between m-3">
       <Card style={{ width: "18rem" }} className="m-auto">
         <Card.Img variant="top" src={prod.imageUrl} />
-        <Card.Body className="">
-          <Card.Title>{prod.title}</Card.Title>
-          <Card.Text>Price $ {prod.price}</Card.Text>
-          <Button variant="primary">Add to Cart</Button>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "18rem" }} className="m-auto">
-        <Card.Img variant="top" src={prod.imageUrl} />
-        <Card.Body className="">
+        <Card.Body>
           <Card.Title>{prod.title}</Card.Title>
           <Card.Text>Price $ {prod.price}</Card.Text>
           <Button variant="primary">Add to Cart</Button>
