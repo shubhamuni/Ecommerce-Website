@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import Header from "./component/Layout/Header";
 import Product from "./component/Product/product";
 import Cart from "./component/Cart/Cart";
-import CartProvider from "./store/CartProvider";
+import Wrapper from "./store/Wrapper";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -10,18 +10,19 @@ function App() {
   const showCartHandler = () => {
     setCartIsShown(true);
   };
+
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
 
   return (
-    <Fragment>
+    <Wrapper>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShow={showCartHandler} />
       <main>
         <Product />
       </main>
-    </Fragment>
+    </Wrapper>
   );
 }
 

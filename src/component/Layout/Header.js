@@ -1,44 +1,56 @@
 import { Fragment, useContext } from "react";
 import { Container, Nav, Navbar, Button, NavItem } from "react-bootstrap";
-import CartContext from "../../store/cart-context";
+import CartContext from "../../store/Wrapper";
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  const cartCtx = useContext(CartContext);
+  // const cartCtx = useContext(CartContext);
 
-  const numberOfCartItems = cartCtx.items.length;
+  // const numberOfCartItems = cartCtx.items.reduce((current, item) => {
+  //   return current + item.amount;
+  // }, 2);
   return (
     <Fragment>
       <header className={classes.header}>
         <Navbar bg="dark" variant="dark" fixed="top">
           <Container>
-            <Navbar.Brand href="#home" className="p-1">
+            <Navbar.Brand
+              href="https://react-bootstrap.github.io/components/table/"
+              className="p-1"
+            >
               Online Store
             </Navbar.Brand>
             <Nav className="ms-4">
               <NavItem>
-                <a href="#" className="nav-link ms-5">
+                <a
+                  href="https://react-bootstrap.github.io/components/table/"
+                  className="nav-link ms-5"
+                >
                   Home
                 </a>
               </NavItem>
               <NavItem>
-                <a href="www.google.com" className="nav-link">
+                <a
+                  href="https://react-bootstrap.github.io/components/table/"
+                  className="nav-link"
+                >
                   Store
                 </a>
               </NavItem>
               <NavItem>
-                <a href="#" className="nav-link">
+                <a href="#About" className="nav-link">
                   About
                 </a>
               </NavItem>
             </Nav>
             <Button
               onClick={props.onShow}
-              className="align-content-end"
-              style={{ width: "10rem", height: "30px", paddingBottom: "2rem" }}
-              variant="secondary"
+              className="justify-content-end"
+              variant="primary"
+              style={{ width: "10rem", height: "2rem" }}
             >
-              Cart <span>{numberOfCartItems}</span>
+              <span>Cart </span>
+              <span>(0 items )</span>
             </Button>
           </Container>
         </Navbar>

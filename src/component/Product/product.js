@@ -1,4 +1,4 @@
-import { Container, Button, Navbar, Row, Col } from "react-bootstrap";
+import { Container, Button, Navbar } from "react-bootstrap";
 import AvailableProducts from "./AvailableProduct";
 
 const Product = (props) => {
@@ -7,7 +7,7 @@ const Product = (props) => {
       <AvailableProducts />
       <Button
         onClick={props.onShow}
-        className="align-content-end"
+        className="align-content-end m-2"
         style={{
           width: "10rem",
           height: "30px",
@@ -18,7 +18,7 @@ const Product = (props) => {
         Go to Cart
       </Button>
       <Navbar
-        className="ms-0"
+        className="p-2 "
         bg="primary"
         variant="light"
         style={{ display: "flex" }}
