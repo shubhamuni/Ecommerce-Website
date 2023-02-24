@@ -1,14 +1,15 @@
 import { Fragment, useContext } from "react";
 import { Container, Nav, Navbar, Button, NavItem } from "react-bootstrap";
-import CartContext from "../../store/Wrapper";
+import CartContext from "../../store/CartContext";
+
 import classes from "./Header.module.css";
 
 const Header = (props) => {
-  // const cartCtx = useContext(CartContext);
+  const cartCtx = useContext(CartContext);
 
-  // const numberOfCartItems = cartCtx.items.reduce((current, item) => {
-  //   return current + item.amount;
-  // }, 2);
+  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
+    return curNumber + item.amount;
+  }, 0);
   return (
     <Fragment>
       <header className={classes.header}>
@@ -50,7 +51,7 @@ const Header = (props) => {
               style={{ width: "10rem", height: "2rem" }}
             >
               <span>Cart </span>
-              <span>(0 items )</span>
+              <span>({numberOfCartItems}items )</span>
             </Button>
           </Container>
         </Navbar>

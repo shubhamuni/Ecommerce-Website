@@ -4,7 +4,9 @@ import Input from "../UI/Input";
 
 const ProductForm = (props) => {
   const [amountIsValid, setAmountIsValid] = useState(true);
+
   const amountInputRef = useRef();
+
   const submitHandler = (event) => {
     event.preventDefault();
     const enteredAmount = amountInputRef.current.value;
@@ -18,8 +20,12 @@ const ProductForm = (props) => {
     }
     props.onAddToCart(enteredAmountNumber);
   };
+
+  // const handleChange = (e) => {
+  //   setInputValue(e.target.value);
+
   return (
-    <form onSubmit={submitHandler}>
+    <form>
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -27,12 +33,19 @@ const ProductForm = (props) => {
           id: "amount",
           type: "number",
           min: "1",
-          max: "1",
+          max: "5",
           step: "1",
           defaultValue: "1",
         }}
       />
-      <Button variant="primary">Add to Cart</Button>
+      {/* <input
+        type={"number"}
+        value={inputValue}
+        onChange={(e) => handleChange(e)}
+      /> */}
+      <Button onClick={submitHandler} variant="primary">
+        Add to Cart
+      </Button>
       {!amountIsValid && <p>Please Enter Valid Amount</p>}
     </form>
   );

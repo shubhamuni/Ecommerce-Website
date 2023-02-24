@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Container, Form, Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import CartContext from "../../store/CartContext";
 
 function Cart(props) {
+  const cartCtx = useContext(CartContext);
+
+  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+
+  const cartItems = cartCtx.items.map((item) => (
+    <Row>
+      <Col>{item.title}</Col>
+      <Col>{item.amount}</Col>
+      <Col>$ {item.price}</Col>
+    </Row>
+  ));
+  console.log(cartItems);
   return (
     <Container>
       <Form>
@@ -11,17 +24,16 @@ function Cart(props) {
           <Modal.Header closeButton>
             <Modal.Title>Cart</Modal.Title>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body style={{ maxHeight: "20rem", overflow: "scroll" }}>
             <Row>
-              <Col>Item</Col>
-              <Col>Price</Col>
+              <Col> Items</Col>
+              <Col> Amount</Col>
+              <Col> Price</Col>
             </Row>
-            <Row>
-              <Col>Colors</Col>
-              <Col>$ 20</Col>
-            </Row>
+            {cartItems}
           </Modal.Body>
           <Modal.Footer>
+            <Col>Total Amount {totalAmount}</Col>
             <Button variant="secondary" onClick={props.onClose}>
               Close
             </Button>
