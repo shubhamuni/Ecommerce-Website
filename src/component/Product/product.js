@@ -1,4 +1,5 @@
-import { Container, Button, Navbar } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
+import Footer from "../Layout/Footer";
 import AvailableProducts from "./AvailableProduct";
 
 const Product = (props) => {
@@ -19,13 +20,7 @@ const Product = (props) => {
           Go to Cart
         </Button>
       </Container>
-      <Navbar className="p-1 " bg="primary" variant="light">
-        <Container>
-          <Navbar.Brand>
-            <h3>The Generics</h3>
-          </Navbar.Brand>
-        </Container>
-      </Navbar>
+      <Footer />
     </div>
   );
 };
