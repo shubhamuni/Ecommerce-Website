@@ -26,6 +26,13 @@ const productsArr = [
     price: 100,
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
   },
+  {
+    id: "5",
+    title: "Orange Color",
+    price: 100,
+    imageUrl:
+      "https://c0.wallpaperflare.com/preview/124/688/1015/texture-colorful-colors-multi-colors.jpg",
+  },
 ];
 
 const AvailableProducts = () => {
@@ -42,7 +49,9 @@ const AvailableProducts = () => {
     <Container className="justify-content-center">
       <Row>
         <Col>
-          <ul>{productList}</ul>
+          <ul className="d-flex flex-wrap justify-content-center m-5 p-5">
+            {productList}
+          </ul>
         </Col>
       </Row>
     </Container>

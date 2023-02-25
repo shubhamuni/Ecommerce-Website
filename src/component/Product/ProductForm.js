@@ -21,11 +21,8 @@ const ProductForm = (props) => {
     props.onAddToCart(enteredAmountNumber);
   };
 
-  // const handleChange = (e) => {
-  //   setInputValue(e.target.value);
-
   return (
-    <form>
+    <form className="m-3">
       <Input
         ref={amountInputRef}
         label="Amount"
@@ -38,14 +35,11 @@ const ProductForm = (props) => {
           defaultValue: "1",
         }}
       />
-      {/* <input
-        type={"number"}
-        value={inputValue}
-        onChange={(e) => handleChange(e)}
-      /> */}
-      <Button onClick={submitHandler} variant="primary">
-        Add to Cart
-      </Button>
+      <div>
+        <Button onClick={submitHandler} variant="dark">
+          Add to Cart
+        </Button>
+      </div>
       {!amountIsValid && <p>Please Enter Valid Amount</p>}
     </form>
   );

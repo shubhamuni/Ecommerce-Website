@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import Header from "./component/Layout/Header";
 import Product from "./component/Product/product";
 import Cart from "./component/Cart/Cart";
@@ -14,7 +14,6 @@ function App() {
   const hideCartHandler = () => {
     setCartIsShown(false);
   };
-
   return (
     <Wrapper>
       {cartIsShown && <Cart onClose={hideCartHandler} />}

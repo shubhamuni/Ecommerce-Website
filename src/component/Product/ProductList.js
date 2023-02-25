@@ -1,6 +1,5 @@
 import ProductForm from "./ProductForm";
-import { Card, Button } from "react-bootstrap";
-import Input from "../UI/Input";
+import { Card } from "react-bootstrap";
 import { useContext } from "react";
 import CartContext from "../../store/CartContext";
 
@@ -18,8 +17,8 @@ const ProductList = (props) => {
     });
   };
   return (
-    <section className="d-flex justify-content-between m-3">
-      <Card style={{ width: "25rem" }} className="m-5">
+    <section className="d-flex">
+      <Card style={{ width: "15rem" }} className="m-5">
         <Card.Img variant="top" src={props.imageUrl} />
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>

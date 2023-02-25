@@ -3,33 +3,30 @@ import AvailableProducts from "./AvailableProduct";
 
 const Product = (props) => {
   return (
-    <Container fluid>
-      <AvailableProducts />
-      <Button
-        onClick={props.onShow}
-        className="align-content-end m-2"
-        style={{
-          width: "10rem",
-          height: "30px",
-          paddingBottom: "2rem",
-        }}
-        variant="secondary"
-      >
-        Go to Cart
-      </Button>
-      <Navbar
-        className="p-2 "
-        bg="primary"
-        variant="light"
-        style={{ display: "flex" }}
-      >
+    <div>
+      <Container fluid>
+        <AvailableProducts />
+        <Button
+          onClick={props.onShow}
+          style={{
+            width: "10rem",
+            height: "30px",
+            paddingBottom: "2rem",
+            marginBottom: "1rem",
+          }}
+          variant="dark"
+        >
+          Go to Cart
+        </Button>
+      </Container>
+      <Navbar className="p-1 " bg="primary" variant="light">
         <Container>
           <Navbar.Brand>
             <h3>The Generics</h3>
           </Navbar.Brand>
         </Container>
       </Navbar>
-    </Container>
+    </div>
   );
 };
 

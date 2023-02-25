@@ -39,7 +39,7 @@ const Header = (props) => {
                 </a>
               </NavItem>
               <NavItem>
-                <a href="#About" className="nav-link">
+                <a href="About" className="nav-link">
                   About
                 </a>
               </NavItem>
@@ -47,8 +47,8 @@ const Header = (props) => {
             <Button
               onClick={props.onShow}
               className="justify-content-end"
-              variant="primary"
-              style={{ width: "10rem", height: "2rem" }}
+              variant="secondary"
+              style={{ width: "10rem", height: "2.5rem" }}
             >
               <span>Cart </span>
               <span>({numberOfCartItems}items )</span>
