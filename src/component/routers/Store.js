@@ -1,4 +1,4 @@
-import App from "./About";
+import App from "./../../App";
 
 const Store = () => {
   return <App />;

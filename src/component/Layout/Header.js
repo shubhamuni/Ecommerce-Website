@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { Container, Nav, Navbar, NavItem } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
@@ -14,14 +15,29 @@ const Header = (props) => {
               Online Store
             </Navbar.Brand>
             <Nav className="ms-4">
-              <NavItem>
-                <Nav.Link href="Home">Home</Nav.Link>
+              <NavItem className="p-2 ">
+                <NavLink
+                  style={{ textDecoration: "none", color: "#f3f3f3" }}
+                  to="Home"
+                >
+                  Home
+                </NavLink>
               </NavItem>
-              <NavItem>
-                <Nav.Link href="Store">Store</Nav.Link>
+              <NavItem className="p-2 ">
+                <NavLink
+                  style={{ textDecoration: "none", color: "#f3f3f3" }}
+                  to="Store"
+                >
+                  Store
+                </NavLink>
               </NavItem>
-              <NavItem>
-                <Nav.Link href="About">About Us</Nav.Link>
+              <NavItem className="p-2 ">
+                <NavLink
+                  style={{ textDecoration: "none", color: "#f3f3f3" }}
+                  to={"About"}
+                >
+                  About us
+                </NavLink>
               </NavItem>
             </Nav>
             <HeaderCartButton onShow={props.onShow} />
