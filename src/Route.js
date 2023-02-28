@@ -1,17 +1,37 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import Cart from "./component/Cart/Cart";
+import Header from "./component/Layout/Header";
 import About from "./component/routers/About";
 import Home from "./component/routers/Home";
 import Store from "./component/routers/Store";
+import Wrapper from "./store/Wrapper";
 
-const router = createBrowserRouter([
-  { path: "/", element: <App /> },
-  { path: "/About", element: <About /> },
-  { path: "/Home", element: <Home /> },
-  { path: "/Store", element: <Store /> },
-]);
-const Routes = () => {
-  return <RouterProvider router={router} />;
+const Routing = (props) => {
+  const [cartIsShown, setCartIsShown] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
+  return (
+    <Wrapper>
+      <BrowserRouter>
+        {cartIsShown && <Cart onClose={hideCartHandler} />}
+        <Header onShow={showCartHandler} />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </Wrapper>
+  );
 };
 
-export default Routes;
+export default Routing;

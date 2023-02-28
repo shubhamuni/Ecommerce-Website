@@ -1,27 +1,20 @@
-import { useState } from "react";
-import Header from "./component/Layout/Header";
 import Product from "./component/Product/product";
 import Cart from "./component/Cart/Cart";
-import Wrapper from "./store/Wrapper";
+import { Fragment } from "react";
+import { Container } from "react-bootstrap";
+import classes from "./component/Layout/Header.module.css";
 
-function App() {
-  const [cartIsShown, setCartIsShown] = useState(false);
-
-  const showCartHandler = () => {
-    setCartIsShown(true);
-  };
-
-  const hideCartHandler = () => {
-    setCartIsShown(false);
-  };
+function App(props) {
   return (
-    <Wrapper>
-      {cartIsShown && <Cart onClose={hideCartHandler} />}
-      <Header onShow={showCartHandler} />
+    <Fragment>
+      <div className={classes.headline}>
+        <Container className="p-1">The Generics</Container>
+      </div>
+      {props.cartIsShown && <Cart onClose={props.hideCartHandler} />}
       <main>
         <Product />
       </main>
-    </Wrapper>
+    </Fragment>
   );
 }
 

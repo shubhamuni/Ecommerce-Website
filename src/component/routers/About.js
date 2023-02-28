@@ -1,10 +1,14 @@
 import { Fragment } from "react";
 import { Figure, Navbar } from "react-bootstrap/";
-import Header from "../Layout/Header";
+import { Container } from "react-bootstrap";
+import classes from "./../Layout/Header.module.css";
+
 const App = () => {
   return (
     <Fragment>
-      <Header />
+      <div className={classes.headline}>
+        <Container className="p-1">The Generics</Container>
+      </div>
       <div style={{ textAlign: "center" }}>
         <h1>About</h1>
         <Figure>

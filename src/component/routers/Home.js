@@ -1,11 +1,14 @@
 import { Fragment } from "react";
 import { Button, Navbar, Table } from "react-bootstrap";
-import Header from "../Layout/Header";
+import { Container } from "react-bootstrap";
+import classes from "./../Layout/Header.module.css";
 
 function Home() {
   return (
     <Fragment>
-      <Header />
+      <div className={classes.headline}>
+        <Container className="p-1">The Generics</Container>
+      </div>
       <div
         style={{
           height: "200px",

@@ -9,7 +9,7 @@ const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
-        <Navbar bg="dark" variant="dark" fixed="top">
+        <Navbar bg="dark" variant="dark" fixed="top" expand="lg">
           <Container>
             <Navbar.Brand href="onlinestore" className="p-1">
               Online Store
@@ -44,9 +44,6 @@ const Header = (props) => {
           </Container>
         </Navbar>
       </header>
-      <div className={classes.headline}>
-        <Container className="p-1">The Generics</Container>
-      </div>
     </Fragment>
   );
 };

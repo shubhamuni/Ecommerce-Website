@@ -1,7 +1,17 @@
-import App from "./../../App";
+import { Fragment } from "react";
+import { Container } from "react-bootstrap";
+import Product from "../Product/product";
+import classes from "./../Layout/Header.module.css";
 
 const Store = () => {
-  return <App />;
+  return (
+    <Fragment>
+      <div className={classes.headline}>
+        <Container className="p-1">The Generics</Container>
+      </div>
+      <Product />
+    </Fragment>
+  );
 };
 
 export default Store;
