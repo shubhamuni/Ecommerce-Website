@@ -39,6 +39,14 @@ const Header = (props) => {
                   About us
                 </NavLink>
               </NavItem>
+              <NavItem className="p-2 ">
+                <NavLink
+                  style={{ textDecoration: "none", color: "#f3f3f3" }}
+                  to={"About"}
+                >
+                  Contact us
+                </NavLink>
+              </NavItem>
             </Nav>
             <HeaderCartButton onShow={props.onShow} />
           </Container>
