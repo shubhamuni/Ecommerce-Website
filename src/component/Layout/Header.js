@@ -42,7 +42,7 @@ const Header = (props) => {
               <NavItem className="p-2 ">
                 <NavLink
                   style={{ textDecoration: "none", color: "#f3f3f3" }}
-                  to={"About"}
+                  to={"contact"}
                 >
                   Contact us
                 </NavLink>

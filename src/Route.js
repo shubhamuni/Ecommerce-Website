@@ -4,6 +4,7 @@ import App from "./App";
 import Cart from "./component/Cart/Cart";
 import Header from "./component/Layout/Header";
 import About from "./component/routers/About";
+import ContactUs from "./component/routers/ContactUs";
 import Home from "./component/routers/Home";
 import Store from "./component/routers/Store";
 import Wrapper from "./store/Wrapper";
@@ -28,6 +29,7 @@ const Routing = (props) => {
           <Route path="/home" element={<Home />} />
           <Route path="/store" element={<Store />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </BrowserRouter>
     </Wrapper>
