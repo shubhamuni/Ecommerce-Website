@@ -37,7 +37,7 @@ const FormAdd = (props) => {
 
   return (
     <Fragment>
-      <Form className="m-5" onSubmit={submitHandler} id="myform">
+      <Form className="mt-5 p-5" onSubmit={submitHandler} id="myform">
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Name</Form.Label>
           <Form.Control
