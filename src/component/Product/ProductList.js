@@ -2,6 +2,7 @@ import ProductForm from "./ProductForm";
 import { Card } from "react-bootstrap";
 import { useContext } from "react";
 import CartContext from "../../store/CartContext";
+import { Link } from "react-router-dom";
 
 const ProductList = (props) => {
   const cartCtx = useContext(CartContext);
@@ -19,7 +20,9 @@ const ProductList = (props) => {
   return (
     <section className="d-flex">
       <Card style={{ width: "15rem" }} className="m-5">
-        <Card.Img variant="top" src={props.imageUrl} />
+        <Link to="Store/p1">
+          <Card.Img variant="top" src={props.imageUrl} />
+        </Link>
         <Card.Body>
           <Card.Title>{props.title}</Card.Title>
           <Card.Text>Price {price}</Card.Text>

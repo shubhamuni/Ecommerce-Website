@@ -3,7 +3,7 @@ import { Figure, Navbar } from "react-bootstrap/";
 import { Container } from "react-bootstrap";
 import classes from "./../Layout/Header.module.css";
 
-const App = () => {
+const About = () => {
   return (
     <Fragment>
       <div className={classes.headline}>
@@ -64,4 +64,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default About;

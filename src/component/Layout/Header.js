@@ -18,7 +18,7 @@ const Header = (props) => {
               <NavItem className="p-2 ">
                 <NavLink
                   style={{ textDecoration: "none", color: "#f3f3f3" }}
-                  to="Home"
+                  to="/Home"
                 >
                   Home
                 </NavLink>
@@ -26,7 +26,7 @@ const Header = (props) => {
               <NavItem className="p-2 ">
                 <NavLink
                   style={{ textDecoration: "none", color: "#f3f3f3" }}
-                  to="Store"
+                  to="/Store"
                 >
                   Store
                 </NavLink>
@@ -34,7 +34,7 @@ const Header = (props) => {
               <NavItem className="p-2 ">
                 <NavLink
                   style={{ textDecoration: "none", color: "#f3f3f3" }}
-                  to={"About"}
+                  to="/About"
                 >
                   About us
                 </NavLink>
@@ -42,7 +42,7 @@ const Header = (props) => {
               <NavItem className="p-2 ">
                 <NavLink
                   style={{ textDecoration: "none", color: "#f3f3f3" }}
-                  to={"contact"}
+                  to="/contact"
                 >
                   Contact us
                 </NavLink>

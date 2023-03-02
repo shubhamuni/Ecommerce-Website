@@ -9,7 +9,9 @@ const Store = () => {
       <div className={classes.headline}>
         <Container className="p-1">The Generics</Container>
       </div>
-      <Product />
+      <main>
+        <Product />
+      </main>
     </Fragment>
   );
 };
