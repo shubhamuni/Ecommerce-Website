@@ -20,7 +20,7 @@ const ProductList = (props) => {
   return (
     <section className="d-flex">
       <Card style={{ width: "15rem" }} className="m-5">
-        <Link to="Store/p1">
+        <Link to={`/store/${props.id}`}>
           <Card.Img variant="top" src={props.imageUrl} />
         </Link>
         <Card.Body>

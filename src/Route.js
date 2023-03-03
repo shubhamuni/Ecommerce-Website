@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch } from "react-router-dom";
-import ProductDetails from "./component/Pages/ProductDetails";
+import ProductData from "./component/Pages/ProductData";
 import About from "./component/routers/About";
 import ContactUs from "./component/routers/ContactUs";
 import Home from "./component/routers/Home";
@@ -18,7 +18,7 @@ const Routing = () => {
             <Store />
           </Route>
           <Route path="/Store/:productId">
-            <ProductDetails />
+            <ProductData />
           </Route>
           <Route path="/Home">
             <Home />
