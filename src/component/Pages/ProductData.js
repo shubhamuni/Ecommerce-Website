@@ -38,6 +38,7 @@ const ProductData = () => {
   const product = productsArr.find(
     (product) => product.id === params.productId
   );
+
   return (
     <div className=" m-5 p-5">
       <div style={{ textAlign: "center" }}>

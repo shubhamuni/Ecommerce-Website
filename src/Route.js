@@ -6,7 +6,7 @@ import Home from "./component/routers/Home";
 import Store from "./component/routers/Store";
 import Layout from "./Layout";
 
-const Routing = () => {
+const Routing = (props) => {
   return (
     <Layout>
       <main>

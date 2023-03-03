@@ -2,13 +2,12 @@ import { Container, Button } from "react-bootstrap";
 import Footer from "../Layout/Footer";
 import AvailableProducts from "./AvailableProduct";
 
-const Product = (props) => {
+const Product = () => {
   return (
     <div>
       <Container fluid>
         <AvailableProducts />
         <Button
-          onClick={props.onShow}
           style={{
             width: "10rem",
             height: "30px",

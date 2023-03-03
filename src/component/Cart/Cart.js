@@ -34,7 +34,6 @@ function Cart(props) {
       </div>
     </Row>
   ));
-  console.log(cartItems);
   return (
     <Container>
       <Form>

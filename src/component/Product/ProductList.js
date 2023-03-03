@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 const ProductList = (props) => {
   const cartCtx = useContext(CartContext);
-
   const price = `$${props.price.toFixed(2)}`;
 
   const addToCartHandler = (amount) => {
