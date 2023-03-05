@@ -4,7 +4,7 @@ import ProductData from "./ProductData";
 import classes from "./../Layout/Header.module.css";
 import { Container } from "react-bootstrap";
 
-const ProductDetails = (props) => {
+const ProductDetails = () => {
   const params = useParams();
   console.log(params.productId);
   return (

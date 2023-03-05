@@ -1,7 +1,4 @@
-import { Fragment } from "react";
-import { Container } from "react-bootstrap";
 import FormAdd from "./FormAdd";
-import classes from "./../Layout/Header.module.css";
 
 const ContactUs = () => {
   async function addFormHandler(form) {
@@ -22,14 +19,7 @@ const ContactUs = () => {
       console.timeLog(error);
     }
   }
-  return (
-    <Fragment>
-      <div className={classes.headline}>
-        <Container className="p-1">The Generics</Container>
-      </div>
-      <FormAdd onAddForm={addFormHandler} />
-    </Fragment>
-  );
+  return <FormAdd onAddForm={addFormHandler} />;
 };
 
 export default ContactUs;

@@ -1,12 +1,11 @@
 .header {
   display: flex;
-  padding: 10px;
   font-size: 18px;
   font-weight: 200;
   text-align: center;
   list-style-type: none;
   border-bottom: 0.1rem solid white;
-  justify-content: space-around;
+  justify-content: space-between;
   position: fixed;
   top: 0%;
   background: rgba(20, 20, 20, 0.826);

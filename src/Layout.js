@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import Cart from "./component/Cart/Cart";
 import Header from "./component/Layout/Header";
-import Wrapper from "./store/Wrapper";
+import CartContext from "./store/CartContext";
 
 const Layout = (props) => {
+  const authCtx = useContext(CartContext);
+  const login = authCtx.isLoggedIn;
   const [cartIsShown, setCartIsShown] = useState(false);
 
   const showCartHandler = () => {
@@ -14,11 +16,11 @@ const Layout = (props) => {
     setCartIsShown(false);
   };
   return (
-    <Wrapper>
+    <Fragment>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShow={showCartHandler} />
       <main>{props.children}</main>
-    </Wrapper>
+    </Fragment>
   );
 };
 
