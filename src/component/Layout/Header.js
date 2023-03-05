@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import { Button, Container, Nav, Navbar, NavItem } from "react-bootstrap";
+import { Container, Nav, Navbar, NavItem } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CartContext from "../../store/CartContext";
 import classes from "./Header.module.css";
