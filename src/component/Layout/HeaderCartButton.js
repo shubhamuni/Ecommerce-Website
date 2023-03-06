@@ -15,10 +15,10 @@ const HeaderCartButton = (props) => {
         onClick={props.onShow}
         className="justify-content-end"
         variant="secondary"
-        style={{ width: "8rem", height: "2.5rem" }}
+        style={{ width: "10rem", height: "2.5rem" }}
       >
         <span>Cart </span>
-        <span>({numberOfCartItems}) items </span>
+        <span> Items {numberOfCartItems}</span>
       </Button>
       {islogin && (
         <Button variant="dark" onClick={cartCtx.logout}>
