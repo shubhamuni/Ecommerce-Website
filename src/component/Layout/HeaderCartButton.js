@@ -4,7 +4,6 @@ import CartContext from "../../store/CartContext";
 
 const HeaderCartButton = (props) => {
   const cartCtx = useContext(CartContext);
-  const islogin = cartCtx.isLoggedIn;
 
   const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
     return curNumber + item.amount;
@@ -20,11 +19,9 @@ const HeaderCartButton = (props) => {
         <span>Cart </span>
         <span> Items {numberOfCartItems}</span>
       </Button>
-      {islogin && (
-        <Button variant="dark" onClick={cartCtx.logout}>
-          Logout
-        </Button>
-      )}
+      <Button variant="dark" onClick={cartCtx.logout}>
+        Logout
+      </Button>
     </div>
   );
 };

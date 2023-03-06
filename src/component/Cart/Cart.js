@@ -7,7 +7,7 @@ import CartContext from "../../store/CartContext";
 function Cart(props) {
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalPrice = `$${cartCtx.totalPrice.toFixed(2)}`;
 
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
@@ -50,7 +50,7 @@ function Cart(props) {
             {cartItems}
           </Modal.Body>
           <Modal.Footer>
-            <Col>Total Amount : {totalAmount}</Col>
+            <Col>Total Amount : {totalPrice}</Col>
             <Button variant="secondary" onClick={props.onClose}>
               Close
             </Button>

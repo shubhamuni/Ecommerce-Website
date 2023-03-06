@@ -1,3 +1,4 @@
+import axios from "axios";
 import { Fragment, useContext, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import CartContext from "../store/CartContext";
@@ -14,14 +15,15 @@ const AuthForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const switchAuthModeHandler = () => {
+    // For swicthing between create account and login with existing account
     setIsLogin((prevState) => !prevState);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
 
-    const enteredEmail = emailInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
+    const enteredEmail = emailInputRef.current.value; //Takes the input from authentication form
+    const enteredPassword = passwordInputRef.current.value; //Takes the input from authentication form
 
     // optional: Add validation
 
@@ -39,7 +41,7 @@ const AuthForm = () => {
       body: JSON.stringify({
         email: enteredEmail,
         password: enteredPassword,
-        returnSecureToken: true,
+        returnSecureToken: true, // For logging we require these keys
       }),
       headers: {
         "Content-Type": "application/json",
@@ -52,16 +54,15 @@ const AuthForm = () => {
           return res.json();
         } else {
           return res.json().then((data) => {
-            let errorMessage = "Authentication failed!";
+            let errorMessage = "Something Went Wrong";
 
             throw new Error(errorMessage);
           });
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken);
-        console.log(data);
-        history.replace("/");
+        authCtx.login(data.idToken); //Login token saved to context
+        history.replace("/"); // send the page to Store if successfully logged in
       })
       .catch((err) => {
         alert(err.message);
@@ -69,7 +70,7 @@ const AuthForm = () => {
   };
   let content = isLogin ? "Login" : "Create Account";
   if (isLoading) {
-    content = <p>Sending request.....</p>;
+    content = <p>Sending request.....</p>; //when the user clicks on login/create account then appears
   }
 
   return (
