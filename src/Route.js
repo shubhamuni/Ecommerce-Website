@@ -21,27 +21,28 @@ const Routing = (props) => {
             {authCtx.isLoggedIn && <Store />}
           </Route>
           <Route path="/authform">
-            <AuthForm />
+            {!authCtx.isLoggedIn && <AuthForm />}
+            {authCtx.isLoggedIn && <Redirect to="/" />}
           </Route>
           <Route exact path="/Store">
             {authCtx.isLoggedIn && <Store />}
-            <Redirect to="/authform" />
+            {!authCtx.isLoggedIn && <AuthForm />}
           </Route>
           <Route path="/Store/:productId">
             {authCtx.isLoggedIn && <ProductData />}
-            <Redirect to="/authform" />
+            {!authCtx.isLoggedIn && <AuthForm />}
           </Route>
           <Route path="/Home">
             {authCtx.isLoggedIn && <Home />}
-            <Redirect to="/authform" />
+            {!authCtx.isLoggedIn && <AuthForm />}
           </Route>
           <Route path="/About">
             {authCtx.isLoggedIn && <About />}
-            <Redirect to="/authform" />
+            {!authCtx.isLoggedIn && <AuthForm />}
           </Route>
           <Route path="/Contact">
             {authCtx.isLoggedIn && <ContactUs />}
-            <Redirect to="/authform" />
+            {!authCtx.isLoggedIn && <AuthForm />}
           </Route>
         </Switch>
       </main>

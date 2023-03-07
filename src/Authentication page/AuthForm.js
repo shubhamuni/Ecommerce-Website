@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Fragment, useContext, useRef, useState } from "react";
 import { useHistory } from "react-router-dom";
 import CartContext from "../store/CartContext";
@@ -10,7 +9,6 @@ const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
   const authCtx = useContext(CartContext);
-
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -23,8 +21,8 @@ const AuthForm = () => {
     event.preventDefault();
 
     const enteredEmail = emailInputRef.current.value; //Takes the input from authentication form
-    const enteredPassword = passwordInputRef.current.value; //Takes the input from authentication form
-
+    const enteredPassword = passwordInputRef.current.value; //Takes the input from authentication
+    localStorage.setItem("email", enteredEmail);
     // optional: Add validation
 
     setIsLoading(true);
@@ -61,8 +59,10 @@ const AuthForm = () => {
         }
       })
       .then((data) => {
-        authCtx.login(data.idToken); //Login token saved to context
-        history.replace("/"); // send the page to Store if successfully logged in
+        //Login token saved to context
+        authCtx.login(data.idToken);
+        // send the page to Store if successfully logged in
+        history.replace("/");
       })
       .catch((err) => {
         alert(err.message);

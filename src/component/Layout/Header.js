@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Container, Nav, Navbar, NavItem } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import CartContext from "../../store/CartContext";
 import classes from "./Header.module.css";
 import HeaderCartButton from "./HeaderCartButton";
@@ -22,12 +22,15 @@ const Header = (props) => {
             <Nav className="ms-4">
               <NavItem className="p-2 ">
                 {islogin && (
-                  <Link
-                    style={{ textDecoration: "none", color: "#f3f3f3" }}
+                  <NavLink
+                    style={{
+                      textDecoration: "none",
+                      color: "#f3f3f3",
+                    }}
                     to="/Home"
                   >
                     Home
-                  </Link>
+                  </NavLink>
                 )}
               </NavItem>
               {islogin && (

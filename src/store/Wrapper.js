@@ -11,6 +11,7 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
   // For adding items to cart
+
   if (action.type === "ADD") {
     const updatedTotalPrice =
       state.totalPrice + action.item.price * action.item.amount;
@@ -18,10 +19,14 @@ const cartReducer = (state, action) => {
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.item.id
     );
-    const existingCartItem = state.items[existingCartItemIndex]; //item which is already present in cart
+    const existingCartItem = state.items[existingCartItemIndex];
+
+    //item which is already present in cart
+
     let updatedItems;
 
     // If the item is already exist then update the amount
+
     if (existingCartItem) {
       const updatedItem = {
         ...existingCartItem,
@@ -42,15 +47,21 @@ const cartReducer = (state, action) => {
     };
   }
   //For removing items from cart
+
   if (action.type === "REMOVE") {
     const existingCartItemIndex = state.items.findIndex(
       (item) => item.id === action.id
     );
+
     const existingItem = state.items[existingCartItemIndex];
+
     // updating the price of item
+
     const updatedTotalPrice = state.totalPrice - existingItem.price;
     let updatedItems;
+
     // if the amount of item is 1 then remove item from cart
+
     if (existingItem.amount === 1) {
       updatedItems = state.items.filter((item) => item.id !== action.id);
     } else {
@@ -75,15 +86,26 @@ const Wrapper = (props) => {
   );
 
   const addItemToCartHandler = (item) => {
+    const email = localStorage.getItem("email");
+    axios.post(
+      `https://crudcrud.com/api/acb7fe59bf2941cea6221757165eca49/cart/${email}`,
+      {
+        title: item.title,
+        amount: item.amount,
+        price: item.price,
+      }
+    );
     dispatchCartAction({ type: "ADD", item: item });
   };
 
   const removeItemFromCartHandler = (id) => {
     dispatchCartAction({ type: "REMOVE", id: id });
   };
+
   const localtoken = localStorage.getItem("token");
   const [token, setToken] = useState(localtoken);
   const userLoggedIn = Boolean(token);
+
   const loginHandler = (token) => {
     setTimeout(logoutHandler, 15 * 60 * 1000); //For Auto logout functionality
     setToken(token); // for storing token into context
